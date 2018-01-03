@@ -1,12 +1,11 @@
-                                               #include <iostream>
+#include <iostream>
 #include <stdlib.h>
 #include<ncurses/ncurses.h>
-
 using namespace std;
-
 int main()
 {
-    int board[10][10] = {
+    int board[10][10] = 
+  {
         {0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0},
@@ -18,7 +17,7 @@ int main()
         {0,0,0,0,0,0,0,0,0},
     };
     int gracz1;
-int gracz2;
+    int gracz2;
     char znak;
     initscr();
     noecho();
@@ -34,9 +33,6 @@ int gracz2;
     switch(znak)
     {
     case '1':
-
-
-
             printw("Witaj w grze Gomoku");
             mvprintw(2,13,"   1   2   3   4   5   6   7   8   9   ");
             mvprintw(3,13,"  /-----------------------------------");
@@ -59,3 +55,11 @@ int gracz2;
             mvprintw(20,13,"i|   |   |   |   |   |   |   |   |   |");
             mvprintw(21,13,"  -----------------------------------/");
             mvprintw(22,13," Gre rozpoczyna gracz nr 1- X ");
+            for (int i = 0; i<40;i++){
+            refresh();
+            mvprintw(23,13,"Podaj wspolrzedne gdzie chcesz umiescic X/O (1-9):");
+            refresh();
+            int x=getch()-'1'+1;
+            mvprintw(24,13,"Podaj wspolrzedne gdzie chcesz umiescic X/O (a-i):");
+            refresh();
+            int y=getch()-'a'+1;
