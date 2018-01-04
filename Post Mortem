@@ -1,1 +1,34 @@
+Projekt 
+Wykonał: Michał Borys, I EE-DI
+Nr indeksu: 156404
+Moje repozytorium: https://github.com/Michalborys/Gomoku-projekt
+Temat projektu: Projektowanie gry Gomoku
+Opis gry: Przygotowywana przeze mnie gra jest rozszerzeniem popularnej gierki „kółko, krzyżyk” z tą różnicą, że gracz musi na planszy mieć pięć znaków pod rząd (pionowo, poziomo lub ukośnie), aby zwyciężyć. Gra przeznaczona jest dla dwójki graczy, jeden w planszę wpisuje kółka, drugi krzyżyki. Gracze muszą wykazać się sprytem i dokładną obserwacją ruchów przeciwnika, aby w końcowym rozrachunku zwyciężyć.
+Mechanizm gry: Plansza składa się z 81 kwadratów, w których zawodnicy mają umieścić kółko lub krzyżyk.
 
+ Jeden z zawodników podaje współrzędne swojego znaku. Po podaniu współrzędnych w danym kwadracie zostaje umieszczone kółko dla gracza nr 1. Następnie przeciwnik robi to samo, z tą różnicą, że w jego polu przyporządkowany zostaje krzyżyk.  Rozgrywka trwa do momentu aż jeden z zawodników umieści pięć znaków obok siebie lub kiedy wszystkie pola zostaną zapełnione, w takim wypadku na ekranie powinien pojawić się napis REMIS. 
+
+Trudności i problemy podczas pisania programu, czyli co się nauczyłem i dowiedziałem o programowaniu:
+1.Trudność z dodaniem biblioteki ncurses- rozwiązany dzięki pomocy kolegi
+2.Nieumiejętność stworzenia menu wyboru- skorzystałem z 	poradnika ze strony internetowej cpp0x.pl
+3.Nie wiedziałem jak zrobić, aby po naciśnięciu danego klawisza wyczyścić ekran- korzystam z funkcji clear (), początkowo funkcja nie działała, dopiero zorientowałem się, że zapomniałem o średniku.
+4.Problem z wykonaniem planszy do gry- musiałem skorzystać z poradników do ncurses i opanować mvprintw(x,y,”......”);
+5.Trudność z podawaniem współrzędnych, gdzie ma być umieszczony tekst – chwila zastanowienia i wypróbowania różnych możliwości pozwoliła rozwiązać problem
+6.Nauka tworzenia tablic.
+7.Nieumiejętność sprawienia, aby po podaniu współrzędnych znak pojawiał się w danej kratce- rozwiązanie problemu za pomocą funkcji getch- dzięki pomocy pana dr Bogusława Rymuta na konsultacjach
+8.Pojawił się również problem, aby na zmianę gracze mogli wpisywać znaki- wykorzystanie warunku if
+9.mvprintw(2+1+2*(y-1)+1, 13+1+4*(x-1)+2, "O"); - problem z wpisaniem wzorów na współrzędne, aby znak pojawiał się w środku kratki- wiele prób zakończonych sukcesem
+10.Stawianie średnika po if- dowiedziałem się, że jeśli program ma działać poprawnie po funkcji if otwieramy klamrę i nie stawiamy;
+11.Problemy ze średnikami, m.in. nie stawiłem średników po int y=getch()-'a'+1 , po  mvprintw(25 ,13,"Pole zajete") itd.                                
+Przy początkach programowania pamiętanie o średnikach w odpowiednim miejscu było dla mnie uciążliwe, po pewnym czasie częściej o nich pamiętam niż zapominam.
+12.Nie wiedziałem jakiej funkcji użyć, aby klikany znak nie pojawiał się na ekranie- wykorzystałem funkcję noecho(); 
+13.Problemy z klamrami:
+zapominałem o otwieraniu klamer w pętli for, co wiązało się z nieprawidłowościami w programie- skorzystałem z poradnika, z którego dowiedziałem się jak tworzyć pętle
+         -klamrę otworzyłem przed else, a nie po funkcji else – poprawiłem 	błąd
+14.board(x)(y) = 1;- użycie błędnych nawiasów, poprawiony błąd
+15.case '1' – brak dwukropka, program nie działał, rozwiązałem go dopiero po skorzystaniu z poradnika cpp0x.pl
+16.switch(znak); niepotrzebnie postawiony znak średnika
+17.Brak średnika po funkcji break
+18.Przy tworzeniu demo początkowo problem, aby gracz mógł wypróbować grę  przy dwóch ruchach (gracz mógł się zapoznać jak grać)- użyłem pętli for, wszystko działa poprawnie.
+19.Użycie tylko jednego= w zapisie if (gracz1==1)- poprawiłem, aby program działał poprawnie
+20.Brak średnika po return 0;
