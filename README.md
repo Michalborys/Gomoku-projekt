@@ -1,11 +1,13 @@
-#include <iostream>
-#include <stdlib.h>
-#include<ncurses/ncurses.h>
-using namespace std;
-int main()
-{
-    int board[10][10] = 
-  {
+                              #include <iostream>
+                              #include <stdlib.h>
+                               #include<ncurses/ncurses.h>
+
+                               using namespace std;
+
+                               int main()
+                               {
+                           int board[10][10] =
+                            {
         {0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0},
@@ -16,6 +18,7 @@ int main()
         {0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0},
     };
+
     int gracz1;
     char znak;
     initscr();
@@ -107,4 +110,4 @@ int main()
             mvprintw(25 ,13,"Pole zajete");
                 }
         }
-        break;
+                 break;
