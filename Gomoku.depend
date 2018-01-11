@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1515689903 source:c:\users\piotr\desktop\gomoku\main.cpp
+	<iostream>
+	<stdlib.h>
+	<ncurses/ncurses.h>
+
+1509984022 c:\users\piotr\desktop\adsdsaf\app\ncurses\include\ncurses\ncurses.h
+	<ncurses/ncurses_dll.h>
+	<stdio.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdbool.h>
+	<libutf8.h>
+	<wchar.h>
+	<ncurses/unctrl.h>
+
+1509984022 c:\users\piotr\desktop\adsdsaf\app\ncurses\include\ncurses\ncurses_dll.h
+
+1509984022 c:\users\piotr\desktop\adsdsaf\app\ncurses\include\ncurses\unctrl.h
+	<ncurses/curses.h>
+
+1509984022 c:\users\piotr\desktop\adsdsaf\app\ncurses\include\ncurses\curses.h
+	<ncurses/ncurses_dll.h>
+	<stdio.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdbool.h>
+	<libutf8.h>
+	<wchar.h>
+	<ncurses/unctrl.h>
+
