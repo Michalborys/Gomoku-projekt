@@ -172,44 +172,14 @@
             mvprintw(19,13," |---+---+---+---+---+---+---+---+---|");
             mvprintw(20,13,"i|   |   |   |   |   | X |   |   |   |");
             mvprintw(21,13,"  -----------------------------------/");
-            for (int i = 0; i<2;i++)
-        {
-            refresh();
-            mvprintw(23,13,"Masz szanse, aby wyprobowac gre, masz tylko 2 proby");
-            mvprintw(24,13,"Podaj wspolrzedne gdzie chcesz umiescic X/O (1-9):");
-            mvprintw(25,13,"inne niz widzisz na ekranie");
-            refresh();
-            int x=getch()-'1'+1;
-            mvprintw(26,13,"Podaj wspolrzedne gdzie chcesz umiescic X/O (a-i):");
-            mvprintw(27,13,"inne niz widzisz na ekranie");
-            refresh();
-            int y=getch()-'a'+1;
-            if (board[x][y] == 0)
-                {
-            mvprintw(28,13,"Podano: %d %d", x, y);
-            refresh();
-            if (gracz1==1)
-                {
-            mvprintw(2+1+2*(y-1)+1, 13+1+4*(x-1)+2, "O");
-                }
-            else
-                {
-            start_color();
-            init_pair(3,COLOR_RED,COLOR_WHITE);
-            attron(COLOR_PAIR(3));
-            mvprintw(2+1+2*(y-1)+1, 13+1+4*(x-1)+2, "X");
-            attroff(COLOR_PAIR(3));
-                }
-            board[x][y] = 1;
-            gracz1=(gracz1+1)%2;
-                }
-            else
-                {
-            mvprintw(28 ,13,"Pole zajete");
-                }
-        }
-            mvprintw(29,13,"Wcisnij 1,aby przejsc do gry");
-            mvprintw(30,13,"2.Wyjscie");
+          refresh();
+            mvprintw(23,13,"Tak wyglada plansza do gry");
+            mvprintw(24,13,"Twoje zadanie to:");
+            mvprintw(25,13,"1.Podanie pierwszej wspolrzednej (1-9) ");
+            mvprintw(26,13,"2.Podanie drugiej wspolrzednej (a-i)");
+            mvprintw(27,13,"Chcesz sprubowac??");
+            mvprintw(28,13,"Wcisnij 1,aby przejsc do gry");
+            mvprintw(29,13,"2.Wyjscie");
             char znak1;
             znak1=getch();
             clear();
@@ -271,6 +241,41 @@
             else
                 {
             mvprintw(25 ,13,"Pole zajete");
+                }
+                 if((board[x][y]==1&&board[x][y+1]==1&&board[x][y+2]==1&&board[x][y+3]==1&&board[x][y+4]==1)
+                   ||( board[x][y]==1&&board[x][y-1]==1&&board[x][y-2]==1&&board[x][y-3]==1&&board[x][y-4]==1)
+                   ||(board[x][y]==1&&board[x+1][y]==1&&board[x+2][y]==1&&board[x+3][y]==1&&board[x+4][y]==1)
+                   ||(board[x][y]==1&&board[x-1][y]==1&&board[x-2][y]==1&&board[x-3][y]==1&&board[x-4][y]==1)
+                   ||(board[x][y]==1&&board[x+1][y+1]==1&&board[x+2][y+2]==1&&board[x+3][y+3]==1&&board[x+4][y+4]==1)
+                   ||(board[x][y]==1&&board[x-1][y-1]==1&&board[x-2][y-2]==1&&board[x-3][y-3]==1&&board[x-4][y-4]==1)
+                   )
+                {
+                   attron (A_BOLD);
+
+                    mvprintw(28,13,"5 (lub wiecej) znakow pod rzad ");
+                    mvprintw(29,13,"Wybierz:");
+                    mvprintw(30,13,"d- graj dalej, rozne znaki");
+                    mvprintw(31,13,"s- wygrana gracza 1- Brawo ");
+                    mvprintw(32,13,"f- wygrana gracza 2- Brawo");
+                    attroff (A_BOLD);
+                    char znak3;
+                    znak3=getch();
+                    switch(znak3)
+                    {
+                    case 'd':
+                        mvprintw(33,13,"Graj dalej");
+                        attron(A_BOLD|A_DIM);
+                        mvprintw(34,13,"Podazaj za kursorem");
+                        attroff(A_BOLD|A_DIM);
+                        continue;
+                    case 's':
+                    return 0;
+                    break;
+                    case 'f':
+                    return 0;
+                    break;
+                    }
+
                 }
         }
             break;
@@ -340,6 +345,8 @@
     endwin();
     return 0;
 }
+
+
 
 
 
