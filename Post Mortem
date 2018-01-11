@@ -32,3 +32,14 @@ zapominałem o otwieraniu klamer w pętli for, co wiązało się z nieprawidłow
 18.Przy tworzeniu demo początkowo problem, aby gracz mógł wypróbować grę  przy dwóch ruchach (gracz mógł się zapoznać jak grać)- użyłem pętli for, wszystko działa poprawnie.
 19.Użycie tylko jednego= w zapisie if (gracz1==1)- poprawiłem, aby program działał poprawnie
 20.Brak średnika po return 0;
+Problem, którego niestety nie udało mi się w pełni rozwiązać:
+1. Moim początkowym założeniem było, aby to na ekranie drukował się napis o zwycięstwie któregoś z graczy, 
+jednak mimo wielu prób (poświęciłem na rozwiązanie tego problemu około 20 godzin)nie do końca się udało, 
+zrobiłem warunek if (gdzie za pomocą tablicy program kiedy jet 5 znaków pod rząd drukuje napis na ekranie). 
+Jednak pomimo wielu prób nie udało mi się zrobić, aby program rozróżniał znaki (program drukuje napis na ekranie, 
+gdy pod rząd jest 5 nawet różnych znaków). Wpadłem na pomysł, że to gracz kiedy za pierwszym razem pojawi się na ekranie informacja 
+o 5 znakach pod rząd wpatruje się w ekran. Stworzyłem menu wyboru switch, gdzie po wciśnięciu odpowiedniego przycisku
+to gracz informuje program o zwycięzcy, albo o jego braku i chęci dalszej gry.
+2. Nie poradziłem sobie też, aby po wybraniu opcji d- graj dalej napis ten znikał i pojawiał się znowu,
+gdy będzie pięć innych znaków pod rząd na ekranie, ale gra jest przejrzysta, gracz powinien w danej chwili śledzić kursor i 
+postępować zgodnie z instrukcją.
